@@ -6,4 +6,4 @@ Installation
 
 Clone this repository or add it using Atlas command
 
-    atlas feature https://github.com/sooualil/atlas-ml-inference-extension.git nfstream_extraction
+    atlas feature https://github.com/sooualil/atlas-ml-inference-extension.git ml_inference
