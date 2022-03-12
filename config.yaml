@@ -1,0 +1,53 @@
+# input: eth0
+id: inference_baseline
+name: Baseline inference
+description: An inference extension based on a trained model on baseline datasets
+authors: 
+  - Abdelkader Elmahdaouy
+  - Abdellah Elmekki
+  - Soufiane Oualil
+  - Ismail Berrada
+  - Zakaria Yartaoui
+
+license: BSD
+version: 1.0
+
+runtime: 
+  name: extension.py
+
+# dependencies: dependecies # TODO
+requirements: requirements.txt # .yaml
+
+# plugins:
+#   - plugin1
+#   - plugin2
+
+log:
+  dir: /logs
+  # Setting the log level: CRITICAL, ERROR, WARNING, INFO, DEBUG
+  level: DEBUG 
+
+data:
+  model: data # csv, ...
+  key: path/to/key.pem # specify the key when the model is crypted
+  batch_size: 200
+  format: pytorch # tensorflow, ONNX...
+  device: CPU # , GPU
+  
+
+
+repository: https://github.com/path/to/repository.git
+
+# TODO: Comment each use case
+channels:
+  publish: [baselineInference]
+  subscribe: [testFeature]
+
+
+
+# Additional options for custom uses
+# Examples: calls for external data or service
+# options:
+#   virustotal:
+#     url: http://example.com/
+#     api_key: api_key
