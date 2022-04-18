@@ -1,6 +1,7 @@
 import os
 from pickle import load
 from typing import Any, Dict, List
+import joblib
 from pandas import DataFrame
 
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
@@ -24,6 +25,7 @@ class Model:
         This function preprocess the raw data, performing columns selection, encoding and features scalung
         """
         df_test = DataFrame(test)
+        # joblib.dump(df_test, './logs/df.joblib')
         df_test = df_test[self.columns]
         for col in self.columns_to_encode:
             df_test[col] = df_test[col].str.strip()
